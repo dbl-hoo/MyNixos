@@ -21,6 +21,15 @@
         ",1920x1080,auto,1"
       ];
 
+      exec-once = [
+         "waybar"                    # Status bar
+        # "dunst"                     # Notification daemon
+        # "hyprpaper"                 # Wallpaper daemon
+         "nm-applet --indicator"     # Network manager tray icon
+        # "blueman-applet"           # Bluetooth tray icon
+        "libinput-gestures-setup start"
+      ];
+
       general = {
         gaps_in = 5;
         gaps_out = 20;
@@ -170,14 +179,6 @@
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
 
-      exec-once = [
-        # "waybar"                    # Status bar
-        # "dunst"                     # Notification daemon
-        # "hyprpaper"                 # Wallpaper daemon
-        # "nm-applet --indicator"     # Network manager tray icon
-        # "blueman-applet"           # Bluetooth tray icon
-        "libinput-gestures-setup start"
-      ];
     };
   };
 } 

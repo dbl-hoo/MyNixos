@@ -3,6 +3,7 @@
   imports = [
     ./hyprland.nix
     ./shell.nix
+    ./waybar.nix
   ];
 
   home.username = "kirkham";
@@ -13,40 +14,86 @@
 
   # Packages that should be installed to the user profile
   home.packages = with pkgs; [
-    # Terminals
-    kitty      # GPU-accelerated terminal emulator
-    alacritty  # Fast, GPU-accelerated terminal emulator
+    # Terminal Emulators
+    kitty          # GPU-accelerated terminal emulator
+    alacritty      # Fast, cross-platform terminal emulator
 
-    # Browsers
-    firefox    # Popular open-source web browser from Mozilla
-
-    # Development
-    git        # Distributed version control system
-    vscodium   # Open source build of VS Code
-    code-cursor      # AI-powered code editor with pair programming features
-
-    # File management and system tools
-    xfce.thunar # File manager
-    rofi-wayland # Application launcher for Wayland
-    libinput     # Library to handle input devices
-    hyprland-protocols
-    libinput-gestures
+    # Browsers and Internet
+    #firefox        # Popular open-source web browser
     
-    # Terminal utilities
-    fastfetch   # Fast and feature-rich terminal file manager
-    pfetch     # Lightweight system information tool
-    btop       # Resource monitor that shows usage and stats
-    tree       # Directory listing command that produces a depth-indented listing
+    # Development Tools
+    #git            # Version control system
+    vscodium      # Open source build of VS Code
+    code-cursor   # AI-powered code editor
 
+    # System Utilities
+    btop          # Resource monitor showing usage and stats
+    htop          # Interactive process viewer
+    fastfetch     # Quick system information tool
+    pfetch        # Minimal system information tool
+    tree          # Directory listing in tree format
+    killall       # Utility to kill processes by name
+    duf           # Disk usage utility (better df)
+    ncdu          # NCurses disk usage analyzer
+    brightnessctl # Control device brightness
+    dosfstools    # Tools for FAT filesystems
+    ntfs3g        # NTFS filesystem support
+    
+    # File Management
+    xfce.thunar   # Modern file manager
+    file-roller   # Archive manager for GNOME
+    bat           # Better cat with syntax highlighting
+    eza           # Modern replacement for ls
+    ripgrep       # Fast text search tool
+    unzip         # ZIP archive extraction
+    
+    # Wayland Specific
+    #rofi-wayland  # Application launcher for Wayland
+    grim          # Screenshot utility
+    hyprpolkitagent # Authentication agent
+    # waybar        # Highly customizable Wayland bar
+    
+    # Desktop Environment
+    libinput              # Input device management
+    hyprland-protocols    # Wayland protocols for Hyprland
+    libinput-gestures     # Gesture support
+
+    
+    # Audio/Video
+    ffmpeg        # Multimedia framework
+    mpv           # Media player
+    pavucontrol   # Audio control panel
+    playerctl     # Media player control
+    spotify       # Music streaming client
+    
+    # System Tray Applications
+    networkmanagerapplet  # Network management
+    
+    # Image and Font Management
+    imv           # Image viewer
+    font-manager  # Font management utility
+    
+    # Printer Support
+    hplip         # HP printer drivers and tools
+    
+    # Development and System Management
+    nh            # Nix helper utilities
+    nixfmt-rfc-style # Nix code formatter
+    wget          # File download utility
+    iwgtk         # Wireless network manager GUI
   ];
 
-  # Git configuration
-  programs.git = {
-    enable = true;
-    userName = "kirkham";
-    userEmail = "jason.kirkham@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
+  # Program configurations
+  programs = {
+    firefox.enable = true;
+    rofi.enable = true;
+    git = {
+      enable = true;
+      userName = "kirkham";
+      userEmail = "jason.kirkham@gmail.com";
+      extraConfig = {
+        init.defaultBranch = "main";
+      };
     };
   };
 

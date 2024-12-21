@@ -5,10 +5,9 @@
 let 
   myAliases = {
     sv = "sudo nvim";
-    fr = "nh os switch --hostname nixos /home/kirkham/mynixos";
-    fu = "nh os switch --hostname nixos --update /home/kirkham/mynixos";
+    nr = "nh os switch --hostname nixos /home/kirkham/mynixos";
+    nu = "nh os switch --hostname nixos --update /home/kirkham/mynixos";
     ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-    v = "nvim";
     cat = "bat";
     ll = "eza -lh --icons --grid --group-directories-first";
     la = "eza -lah --icons --grid --group-directories-first";
