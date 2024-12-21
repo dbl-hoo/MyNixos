@@ -34,10 +34,10 @@ in
 {
     programs.bash = {
     	enable = true;
-    	shellAliases = myAliaSses;
+    	shellAliases = myAliases;
   	};
  
- 	Wprograms.zsh = {
+ 	programs.zsh = {
     	enable = true;
     	shellAliases = myAliases;
     	syntaxHighlighting.enable = true;
