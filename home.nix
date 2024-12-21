@@ -2,6 +2,7 @@
 {
   imports = [
     ./hyprland.nix
+    ./shell.nix
   ];
 
   home.username = "kirkham";
