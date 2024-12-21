@@ -49,13 +49,6 @@
     };
   };
 
-  # Shell configuration (zsh)
-  programs.zsh = {
-    enable = true;
-    enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
