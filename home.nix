@@ -42,17 +42,6 @@
     ripgrep       # Fast text search tool
     unzip         # ZIP archive extraction
     
-    # Wayland Specific
-    #rofi-wayland  # Application launcher for Wayland
-    grim          # Screenshot utility
-    hyprpolkitagent # Authentication agent
-    # waybar        # Highly customizable Wayland bar
-    
-    # Desktop Environment
-    libinput              # Input device management
-    hyprland-protocols    # Wayland protocols for Hyprland
-    libinput-gestures     # Gesture support
-
     
     # Audio/Video
     ffmpeg        # Multimedia framework

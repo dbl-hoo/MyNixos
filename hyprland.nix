@@ -1,6 +1,30 @@
 { config, lib, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    # Core Hyprland Utilities
+    #hyprland-qtutils      # Hyprland QT utilities
+    dunst                # Notification daemon
+    libnotify           # Notification library
+    grim          # Screenshot utility
+    hyprpolkitagent # Authentication agent
+    libinput              # Input device management
+    hyprland-protocols    # Wayland protocols for Hyprland
+    libinput-gestures     # Gesture support
+    
+    # Screenshots & Recording
+    grim                # Screenshot utility
+    slurp               # Screen area selection
+    wl-clipboard        # Wayland clipboard utilities
+    
+
+    
+    # Hyprland Add-ons
+    hyprpicker          # Color picker
+    # wlogout             # Logout menu
+    # swaylock-effects    # Screen locker
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
 
