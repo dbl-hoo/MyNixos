@@ -42,9 +42,13 @@ in
     	syntaxHighlighting.enable = true;
     	autosuggestion.enable = true;
     	enableCompletion = true;
-    		initExtra = "
-      	pfetch
-      	source /home/kirkham/mynixos/p10k.zsh";
+    		initExtra = ''
+      	# Only run pfetch if we're in a terminal emulator
+      	if [ -n "$TERM" ] && [ "$TERM" != "dumb" ]; then
+        	pfetch
+      	  source /home/kirkham/mynixos/p10k.zsh
+        fi
+    	'';
     		plugins  = [
      				{name = "powerlevel10k"; 
 						src = pkgs.zsh-powerlevel10k;
