@@ -31,7 +31,7 @@
     settings = {
 
     "$mainMod" = "SUPER";
-    "$terminal" = "alacritty";
+    "$terminal" = "alacritty -e zsh";
     "$fileManager" = "thunar";
     "$menu" = "rofi -show drun";
 

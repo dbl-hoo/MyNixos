@@ -31,29 +31,31 @@ let
 in
 
 {
-    programs.bash = {
-    	enable = true;
-    	shellAliases = myAliases;
-  	};
- 
- 	programs.zsh = {
-    	enable = true;
-    	shellAliases = myAliases;
-    	syntaxHighlighting.enable = true;
-    	autosuggestion.enable = true;
-    	enableCompletion = true;
-    		initExtra = ''
-      	# Only run pfetch if we're in a terminal emulator
-      	if [ -n "$TERM" ] && [ "$TERM" != "dumb" ]; then
-        	pfetch
-      	  source /home/kirkham/mynixos/p10k.zsh
+  programs = {
+    bash = {
+      enable = true;
+      shellAliases = myAliases;
+    };
+
+    zsh = {
+      enable = true;
+      shellAliases = myAliases;
+      syntaxHighlighting.enable = true;
+      autosuggestion.enable = true;
+      enableCompletion = true;
+      initExtra = ''
+        if [ -n "$DISPLAY" ] || [ -n "$WAYLAND_DISPLAY" ]; then
+          pfetch
+          source /home/kirkham/mynixos/p10k.zsh
         fi
-    	'';
-    		plugins  = [
-     				{name = "powerlevel10k"; 
-						src = pkgs.zsh-powerlevel10k;
-						file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-    				}
-					];
-  	};
+      '';
+      plugins = [
+        {
+          name = "powerlevel10k"; 
+          src = pkgs.zsh-powerlevel10k;
+          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+        }
+      ];
+    };
+  };
 }
