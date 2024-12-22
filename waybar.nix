@@ -84,8 +84,9 @@
     style = ''
       * {
         border: none;
+        font-family: "OpenDyslexic Nerd Font";
         border-radius: 0;
-        font-size: 13px;
+        font-size: 16px;
         min-height: 0;
       }
 

@@ -14,13 +14,8 @@
 
   # Packages that should be installed to the user profile
   home.packages = with pkgs; [
-    # Terminal Emulators
-    kitty          # GPU-accelerated terminal emulator
-    alacritty      # Fast, cross-platform terminal emulator
-
-    # Browsers and Internet
-    #firefox        # Popular open-source web browser
-    
+   
+      
     # Development Tools
     #git            # Version control system
     vscodium      # Open source build of VS Code
@@ -87,6 +82,7 @@
   programs = {
     firefox.enable = true;
     rofi.enable = true;
+    alacritty.enable = true;
     git = {
       enable = true;
       userName = "kirkham";

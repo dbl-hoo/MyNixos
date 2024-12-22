@@ -96,9 +96,17 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;    # Optional: powers up the bluetooth controller on boot
+  };
+
+  # Bluetooth manager
+  services.blueman.enable = true;
+
   stylix = {
     enable = true;
-    image = ./wallpapers/east_tn_mountains.jpg;
+    image = ./wallpapers/abdullah-ahmad-_ddRREj9IPg-unsplash.jpg;
     polarity = "dark";
     opacity.terminal = 0.8;
     cursor.package = pkgs.bibata-cursors;
