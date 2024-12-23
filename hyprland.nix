@@ -30,11 +30,12 @@
 
     settings = {
 
+    workspace = "special:spotify, on-created-empty:[float; center; size 80% 80%] spotify";
+
     "$mainMod" = "SUPER";
     "$terminal" = "alacritty -e zsh";
     "$fileManager" = "thunar";
     "$menu" = "rofi -show drun";
-
 
       env = [
         "XCURSOR_SIZE,24"
@@ -58,8 +59,6 @@
         gaps_in = 5;
         gaps_out = 20;
         border_size = 2;
-        # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-        # "col.inactive_border" = "rgba(595959aa)";
         resize_on_border = false;
         allow_tearing = false;
         layout = "dwindle";
@@ -89,22 +88,13 @@
         enabled = true;
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
-          "easeInOutCubic,0.65,0.05,0.36,1"
-          "linear,0,0,1,1"
-          "almostLinear,0.5,0.5,0.75,1.0"
-          "quick,0.15,0,0.1,1"
+          "slidevert,0.83,0,0.17,1"
         ];
 
         animation = [
-          "global, 1, 10, default"
-          "border, 1, 5.39, easeOutQuint"
-          "windows, 1, 4.79, easeOutQuint"
-          "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
-          "windowsOut, 1, 1.49, linear, popin 87%"
-          "fadeIn, 1, 1.73, almostLinear"
-          "fadeOut, 1, 1.46, almostLinear"
-          "fade, 1, 3.03, quick"
-          "workspaces, 1, 1.94, almostLinear, fade"
+          "windows, 1, 4, easeOutQuint"
+          "fade, 1, 4, easeOutQuint"
+          "workspaces, 1, 4, easeOutQuint"
         ];
       };
 
@@ -141,8 +131,21 @@
         workspace_swipe_fingers = 3;
       };
 
+      # Define the floating Alacritty command with custom zsh config
+      "$floatingTerminal" = "alacritty --class floating_term -e zsh'";
+
+      # Add window rules for the floating Alacritty
+      windowrulev2 = [
+        "float,class:^(floating_term)$"
+        "size 50% 50%,class:^(floating_term)$"
+        "center,class:^(floating_term)$"
+        "pin,class:^(floating_term)$"
+      ];
+
       bind = [
         "$mainMod, RETURN, exec, $terminal"
+        "$mainMod SHIFT, RETURN, exec, $floatingTerminal"
+        "$mainMod SHIFT, S, exec, hyprctl dispatch togglespecialworkspace spotify"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, B, exec, firefox"
@@ -184,6 +187,7 @@
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         ", XF86MonBrightnessUp, exec, brightnessctl s 10%+"
         ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+
       ];
 
       bindm = [
@@ -196,11 +200,6 @@
         ", XF86AudioPause, exec, playerctl play-pause"
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
-      ];
-
-      windowrulev2 = [
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
       ];
 
     };

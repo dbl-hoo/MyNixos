@@ -91,7 +91,7 @@
       }
 
       window#waybar {
-        background: @base00;
+        background: transparent;
         color: @base05;
       }
 
@@ -108,6 +108,25 @@
       #workspaces button.active {
         background: @base0D;
         color: @base00;
+      }
+
+      /* Group modules for proper rounding */
+      .modules-left {
+        background: @base00;
+        border-radius: 10px 0 0 10px;
+        padding: 0 10px;
+      }
+
+      .modules-center {
+        background: @base00;
+        border-radius: 10px;
+        padding: 0 10px;
+      }
+
+      .modules-right {
+        background: @base00;
+        border-radius: 0 10px 10px 0;
+        padding: 0 10px;
       }
 
       #clock,

@@ -88,4 +88,4 @@
   # The stateVersion should match your initial NixOS installation version
   home.stateVersion = "25.05";
 
-}
+  }
