@@ -159,6 +159,8 @@
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
+        # "$mainMod SHIFT, H, movetoworkspacesilent, special"
+        # "$mainMod, H, togglespecialworkspace, special"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
@@ -202,7 +204,6 @@
         ", XF86AudioPlay, exec, playerctl play-pause"
         ", XF86AudioPrev, exec, playerctl previous"
       ];
-
     };
   };
 } 
