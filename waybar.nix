@@ -24,7 +24,7 @@
           # "cpu"
           # "memory"
           "battery"
-          "tray"
+          # "tray"
         ];
 
         "hyprland/workspaces" = {
