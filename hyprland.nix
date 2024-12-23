@@ -36,6 +36,7 @@
     "$terminal" = "alacritty -e zsh";
     "$fileManager" = "thunar";
     "$menu" = "rofi -show drun";
+    "$webBrowser" = "zen";
 
       env = [
         "XCURSOR_SIZE,24"
@@ -148,7 +149,7 @@
         "$mainMod SHIFT, S, exec, hyprctl dispatch togglespecialworkspace spotify"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
-        "$mainMod, B, exec, firefox"
+        "$mainMod, B, exec, $webBrowser"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, SPACE, exec, $menu"

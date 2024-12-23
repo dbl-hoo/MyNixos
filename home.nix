@@ -1,4 +1,5 @@
-{ config, pkgs, ... }:
+{ config, pkgs, system, inputs, ... }:
+
 {
   imports = [
     ./hyprland.nix
@@ -15,9 +16,10 @@
   # Packages that should be installed to the user profile
   home.packages = with pkgs; [
    
-      
+    #zen browser
+    inputs.zen_browser.packages.${pkgs.system}.default
+
     # Development Tools
-    #git            # Version control system
     vscodium      # Open source build of VS Code
     code-cursor   # AI-powered code editor
 
