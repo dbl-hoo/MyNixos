@@ -5,6 +5,7 @@
     ./hyprland.nix
     ./shell.nix
     ./waybar.nix
+    ./scripts.nix
   ];
 
   home.username = "kirkham";

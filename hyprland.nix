@@ -30,7 +30,13 @@
 
     settings = {
 
-    workspace = "special:spotify, on-created-empty:[float; center; size 80% 80%] spotify";
+    workspace = [
+      "special:spotify, on-created-empty: spotify"
+      "special:spotify, dropdown, gapsout:20"
+      "special:terminal, on-created-empty:$terminal"
+      "special:terminal, dropdown, gapsout:20"
+    ];
+    
 
     "$mainMod" = "SUPER";
     "$terminal" = "alacritty -e zsh";
@@ -132,21 +138,10 @@
         workspace_swipe_fingers = 3;
       };
 
-      # Define the floating Alacritty command with custom zsh config
-      "$floatingTerminal" = "alacritty --class floating_term -e zsh";
-
-      # Add window rules for the floating Alacritty
-      windowrulev2 = [
-        "float,class:^(floating_term)$"
-        "size 50% 50%,class:^(floating_term)$"
-        "center,class:^(floating_term)$"
-        "pin,class:^(floating_term)$"
-      ];
-
       bind = [
         "$mainMod, RETURN, exec, $terminal"
-        "$mainMod SHIFT, RETURN, exec, $floatingTerminal"
-        "$mainMod SHIFT, S, exec, hyprctl dispatch togglespecialworkspace spotify"
+        "$mainMod SHIFT, S, togglespecialworkspace, spotify"
+        "$mainMod SHIFT, RETURN, togglespecialworkspace, terminal"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, B, exec, $webBrowser"
