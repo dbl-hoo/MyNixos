@@ -53,17 +53,37 @@
             warning = 30;
             critical = 15;
           };
-          format = "{capacity}% {icon}";
-          format-charging = "{capacity}% ";
-          format-plugged = "{capacity}% ";
-          format-icons = ["" "" "" "" ""];
+          format = "{icon} {capacity}%";
+          format-charging = "󰂄 {capacity}%";
+          format-plugged = "󱘖 {capacity}%";
+          format-icons = [
+            "󰁺"
+            "󰁻"
+            "󰁼"
+            "󰁽"
+            "󰁾"
+            "󰁿"
+            "󰂀"
+            "󰂁"
+            "󰂂"
+            "󰁹"
+          ];
+          on-click = "";
+          tooltip = false;
         };
 
         "network" = {
-          format-wifi = "WiFi ({signalStrength}%) ";
-          format-ethernet = "Ethernet ";
-          format-disconnected = "Disconnected ⚠";
-          tooltip-format = "{ifname} via {gwaddr}";
+          format-icons = [
+            "󰤯"
+            "󰤟"
+            "󰤢"
+            "󰤥"
+            "󰤨"
+          ];
+          format-ethernet = " {bandwidthDownOctets}";
+          format-wifi = "{icon} {signalStrength}%";
+          format-disconnected = "󰤮";
+          tooltip = false;
         };
 
         "pulseaudio" = {
