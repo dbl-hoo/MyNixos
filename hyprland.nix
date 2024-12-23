@@ -132,7 +132,7 @@
       };
 
       # Define the floating Alacritty command with custom zsh config
-      "$floatingTerminal" = "alacritty --class floating_term -e zsh'";
+      "$floatingTerminal" = "alacritty --class floating_term -e zsh";
 
       # Add window rules for the floating Alacritty
       windowrulev2 = [
