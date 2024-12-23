@@ -61,6 +61,14 @@
   programs = {
     hyprland.enable = true;
     zsh.enable = true;
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [
+        thunar-archive-plugin
+        thunar-volman
+        tumbler  # Thumbnails daemon
+      ];
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -83,7 +91,7 @@
   # Theming
   stylix = {
     enable = true;
-    image = ./wallpapers/abdullah-ahmad-_ddRREj9IPg-unsplash.jpg;
+    image = ./wallpapers/trooper_still_life_oliver_wetter.png;
     polarity = "dark";
     opacity.terminal = 0.8;
     cursor = {

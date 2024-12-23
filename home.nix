@@ -37,7 +37,6 @@
     ntfs3g        # NTFS filesystem support
     
     # File Management
-    xfce.thunar   # Modern file manager
     file-roller   # Archive manager for GNOME
     bat           # Better cat with syntax highlighting
     eza           # Modern replacement for ls
@@ -67,6 +66,7 @@
     nixfmt-rfc-style # Nix code formatter
     wget          # File download utility
     iwgtk         # Wireless network manager GUI
+
   ];
 
   # Program configurations
@@ -87,7 +87,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # The stateVersion should match your initial NixOS installation version
+  # se stateVersion should match your initial NixOS installation version
   home.stateVersion = "25.05";
 
-  }
+}
