@@ -1,10 +1,14 @@
 { config, lib, pkgs, ... }:
 
 {
+  imports = [
+    ./swaync.nix
+  ];
+
   home.packages = with pkgs; [
     # Core Hyprland Utilities
     #hyprland-qtutils      # Hyprland QT utilities
-    dunst                # Notification daemon
+    swaynotificationcenter                # Notification daemon
     libnotify           # Notification library
     grim          # Screenshot utility
     hyprpolkitagent # Authentication agent
@@ -32,9 +36,9 @@
 
     workspace = [
       "special:spotify, on-created-empty: spotify"
-      "special:spotify, dropdown, gapsout:20"
+      "special:spotify, dropdown, gapsout:45"
       "special:terminal, on-created-empty:$terminal"
-      "special:terminal, dropdown, gapsout:20"
+      "special:terminal, dropdown, gapsout:45"
     ];
     
 
@@ -54,12 +58,9 @@
       ];
 
       exec-once = [
-         "waybar"                    # Status bar
-        # "dunst"                     # Notification daemon
-        # "hyprpaper"                 # Wallpaper daemon
-         "nm-applet --indicator"     # Network manager tray icon
-        # "blueman-applet"           # Bluetooth tray icon
-        "libinput-gestures-setup start"
+        "waybar"                    # Status bar
+        "libinput-gestures-setup start" # Gesture support
+        "swaync"
       ];
 
       general = {
@@ -154,8 +155,6 @@
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
-        # "$mainMod SHIFT, H, movetoworkspacesilent, special"
-        # "$mainMod, H, togglespecialworkspace, special"
 
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"

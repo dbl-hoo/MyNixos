@@ -21,10 +21,8 @@
         modules-right = [
           "pulseaudio"
           "network"
-          # "cpu"
-          # "memory"
           "battery"
-          # "tray"
+          "custom/notification"
         ];
 
         "hyprland/workspaces" = {
@@ -70,6 +68,26 @@
           ];
           on-click = "";
           tooltip = false;
+        };
+
+        "custom/notification" = {
+          tooltip = false;
+          format = "{icon}";
+          format-icons = {
+            notification = "󰂚";
+            none = "󰂜";
+            dnd-notification = "󱏧";
+            dnd-none = "󰂛";
+            inhibited-notification = "󰂚";
+            inhibited-none = "󰂜";
+            dnd-inhibited-notification = "󱏧";
+            dnd-inhibited-none = "󰂛";
+          };
+          return-type = "json";
+          exec-if = "which swaync-client";
+          exec = "swaync-client -swb";
+          on-click = "swaync-client -t";
+          escape = true;
         };
 
         "network" = {
