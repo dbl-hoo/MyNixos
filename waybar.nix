@@ -19,7 +19,7 @@
         ];
         
         modules-right = [
-          "pulseaudio"
+          "wireplumber"
           "network"
           "battery"
           "custom/notification"
@@ -104,12 +104,11 @@
           tooltip = false;
         };
 
-        "pulseaudio" = {
+        "wireplumber" = {
           format = "{volume}% {icon}";
-          format-muted = "Muted ";
-          format-icons = {
-            default = ["" "" ""];
-          };
+          format-muted = "";
+          on-click = "pavucontrol";
+          format-icons = [ "" "" "" ];
         };
 
         "tray" = {

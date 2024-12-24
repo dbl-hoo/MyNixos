@@ -7,6 +7,7 @@
         font-awesome
         material-icons
         nerd-fonts.open-dyslexic
+        jetbrains-mono
         ];
     };
   }

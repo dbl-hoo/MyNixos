@@ -6,6 +6,7 @@
     ./shell.nix
     ./waybar.nix
     ./scripts.nix
+    ./swaync.nix
   ];
 
   home.username = "kirkham";
