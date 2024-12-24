@@ -10,18 +10,20 @@
         spacing = 4;
         
         modules-left = [
-          "clock"
+          "hyprland/workspaces"
           "hyprland/window"
         ];
         
         modules-center = [
-          "hyprland/workspaces"
+          "clock"
         ];
         
         modules-right = [
-          "wireplumber"
+          # "wireplumber"
+          "bluetooth"
           "network"
           "battery"
+          "power-profiles-daemon"
           "custom/notification"
         ];
 
@@ -29,6 +31,39 @@
           format = "{icon}";
           on-click = "activate";
           sort-by-number = true;
+        };
+
+        "hyprland/window" = {
+          max-length = 15;
+          separate-outputs = false;
+          icon = true;
+          rewrite = {
+            "" = " 🙈 ";
+          };
+        };
+
+
+        "bluetooth" = {
+          "format-on" = "";
+          "format-off" = "󰂲";
+          "format-connected" = "󰂱";
+          "on-click" = "blueman-manager";
+          "tooltip-format" = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
+          "tooltip-format-connected" = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
+          "tooltip-format-enumerate-connected" = "{device_alias}\t{device_address}";
+          "tooltip-format-enumerate-connected-battery" = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+        };
+
+        "power-profiles-daemon" = {
+          "format" = "{icon}";
+          "tooltip-format" = "Power profile = {profile}\nDriver: {driver}";
+          "tooltip" = true;
+          "format-icons" = {
+            "default" = "";
+            "performance" = "";
+            "balanced" = "";
+            "power-saver" = "";
+          };
         };
 
         "clock" = {
@@ -128,7 +163,7 @@
       }
 
       window#waybar {
-        background: @base00;
+        background: alpha(@base01, 0.8);
         color: @base05;
       }
 
@@ -149,10 +184,14 @@
 
       #clock,
       #battery,
+      #power-profiles-daemon,
+      #bluetooth,
       #cpu,
       #memory,
       #network,
       #pulseaudio,
+      #wireplumber,
+      #custom-notification,
       #tray {
         padding: 0 10px;
         margin: 0 5px;

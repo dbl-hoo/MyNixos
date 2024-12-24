@@ -86,6 +86,7 @@
   services = {
     blueman.enable = true;
     libinput.enable = true;
+    power-profiles-daemon.enable = true;
   };
 
   # Audio
