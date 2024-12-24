@@ -102,7 +102,7 @@
   # Theming
   stylix = {
     enable = true;
-    image = ./wallpapers/trooper_still_life_oliver_wetter.png;
+    image = ./wallpapers/star_destroyer.jpg;
     polarity = "dark";
     opacity.terminal = 0.8;
     cursor = {
