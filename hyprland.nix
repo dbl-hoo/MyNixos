@@ -162,6 +162,7 @@
         "$mainMod, V, togglefloating,"
         "$mainMod, SPACE, exec, $menu"
         "$mainMod, C, exec, $ide"
+        "$mainMod, L, exec, hyprlock"
 
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"

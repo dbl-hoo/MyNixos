@@ -7,6 +7,8 @@
     ./waybar.nix
     ./scripts.nix
     ./swaync.nix
+    ./hypridle.nix
+    ./hyprlock.nix
   ];
 
   home.username = "kirkham";
