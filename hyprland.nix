@@ -1,9 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [
-    ./swaync.nix
-  ];
 
   home.packages = with pkgs; [
     # Core Hyprland Utilities

@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
   programs.waybar = {
     enable = true;
@@ -6,20 +7,19 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 50;
         spacing = 4;
         
         modules-left = [
-          "hyprland/workspaces"
+          "clock"
           "hyprland/window"
         ];
         
         modules-center = [
-          "clock"
+          "hyprland/workspaces"
         ];
         
         modules-right = [
-          # "wireplumber"
           "bluetooth"
           "network"
           "battery"
@@ -29,19 +29,26 @@
 
         "hyprland/workspaces" = {
           format = "{icon}";
-          on-click = "activate";
+          format-icons = {
+            "terminal" = "";
+            "spotify" = "";
+            "default" = " ";
+          };
           sort-by-number = true;
+          show-special = true;
+          # persistent-workspaces = {
+          #   "*" = 3;
+          # };
         };
 
         "hyprland/window" = {
-          max-length = 15;
+          max-length = 25;
           separate-outputs = false;
           icon = true;
           rewrite = {
             "" = " 🙈 ";
           };
         };
-
 
         "bluetooth" = {
           "format-on" = "";
@@ -163,26 +170,71 @@
       }
 
       window#waybar {
-        background: alpha(@base01, 0.8);
-        color: @base05;
-      }
-
-      #workspaces button {
-        padding: 0 5px;
         background: transparent;
         color: @base05;
       }
 
+      .modules-left {
+        /* Remove the shared background styling */
+        background: transparent;
+        margin: 5px;
+        padding: 0;
+        border-radius: 16px;
+      }
+
+      #clock {
+        background: @base01;
+        margin: 5px;
+        padding: 0 10px;
+        border-radius: 16px;
+      }
+
+      #window {
+        background: @base01;
+        margin: 5px;
+        padding: 0 10px;
+        border-radius: 16px;
+      }
+
+      .modules-right {
+        background: @base01;
+        margin: 5px;
+        padding: 0 5px;
+        border-radius: 16px;
+      }
+
+      #workspaces {
+        background: transparent;
+        margin: 5px;
+        padding: 0px 5px;
+        border-radius: 16px;
+      }
+
+      #workspaces button {
+        padding: 0px 5px;
+        margin: 3px;
+        min-width: 22px;
+        border-radius: 16px;
+        background: @base01;
+        transition: all 0.3s ease-in-out;
+        opacity: 1.0;
+      }
+
       #workspaces button:hover {
-        background: @base02;
+        opacity:0.5;
       }
 
       #workspaces button.active {
-        background: @base0D;
-        color: @base00;
+        background: @base0B;
+        border-radius: 16px;
+        border: 2px @base07 solid;
+        min-width: 25px;
+        transition: all 0.3s ease-in-out;
+        opacity:1.0;
       }
 
       #clock,
+      #window,
       #battery,
       #power-profiles-daemon,
       #bluetooth,
@@ -198,11 +250,11 @@
       }
 
       #battery.warning {
-        color: @base0A;
+        color: #AA336A;
       }
 
       #battery.critical {
-        color: @base08;
+        color: #FF0000;
       }
     '';
   };
