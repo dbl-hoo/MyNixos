@@ -104,7 +104,7 @@
   # Theming
   stylix = {
     enable = true;
-    image = ./wallpapers/star_destroyer.jpg;
+    image = ./wallpapers/lego_mando.jpg;
     polarity = "dark";
     opacity.terminal = 0.8;
     cursor = {
