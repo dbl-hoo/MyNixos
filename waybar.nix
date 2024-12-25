@@ -36,9 +36,6 @@
           };
           sort-by-number = true;
           show-special = true;
-          # persistent-workspaces = {
-          #   "*" = 3;
-          # };
         };
 
         "hyprland/window" = {
@@ -90,8 +87,8 @@
 
         "battery" = {
           states = {
-            warning = 30;
-            critical = 15;
+            warning = 25;
+            critical = 10;
           };
           format = "{icon} {capacity}%";
           format-charging = "󰂄 {capacity}%";
@@ -109,7 +106,7 @@
             "󰁹"
           ];
           on-click = "";
-          tooltip = false;
+          tooltip-format = "{timeTo}";
         };
 
         "custom/notification" = {
@@ -254,8 +251,19 @@
         color: #AA336A;
       }
 
+      @keyframes blink-critical {
+        to {
+          color: #000000;
+        }
+      }
+
       #battery.critical {
         color: #FF0000;
+        animation-name: blink-critical;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
       }
     '';
   };
