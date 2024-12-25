@@ -7,7 +7,6 @@
     #hyprland-qtutils      # Hyprland QT utilities
     swaynotificationcenter                # Notification daemon
     libnotify           # Notification library
-    grim          # Screenshot utility
     hyprpolkitagent # Authentication agent
     libinput              # Input device management
     hyprland-protocols    # Wayland protocols for Hyprland
@@ -21,7 +20,7 @@
 
     
     # Hyprland Add-ons
-    hyprpicker          # Color picker
+    # hyprpicker          # Color picker
     # wlogout             # Logout menu
     # swaylock-effects    # Screen locker
   ];
@@ -44,6 +43,7 @@
     "$fileManager" = "thunar";
     "$menu" = "rofi -show drun";
     "$webBrowser" = "zen";
+    "$ide" = "cursor";
 
       env = [
         "XCURSOR_SIZE,24"
@@ -146,6 +146,8 @@
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, SPACE, exec, $menu"
+        "$mainMod, C, exec, $ide"
+
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
         "$mainMod, left, movefocus, l"
