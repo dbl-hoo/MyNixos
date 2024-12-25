@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }:
-
+        # to-do:  border around special workspaces; change annimations
+        # to-do:  add icons for zen browser and cursor ide
 {
 
   home.packages = with pkgs; [
@@ -130,6 +131,20 @@
           natural_scroll = false;
         };
       };
+
+      # windowrule = [
+      #   "float,^(iwgtk)$"
+      #   "size 800 500,^(iwgtk)$"
+      #   "float,^(pavucontrol)$"
+      #   "center,^(iwgtk)$"
+      #   "center,^(pavucontrol)$"
+      # ];
+
+      windowrulev2 = [
+        "float, class:.*pavucontrol.*"
+        "float, class:.*iwgtk.*"
+        "size 800 500, class:.*iwgtk.*"
+      ];
 
       gestures = {
         workspace_swipe = true;
