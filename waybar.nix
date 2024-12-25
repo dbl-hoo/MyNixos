@@ -143,7 +143,8 @@
           format-ethernet = " {bandwidthDownOctets}";
           format-wifi = "{icon} {signalStrength}%";
           format-disconnected = "󰤮";
-          tooltip = false;
+          on-click = "iwgtk";
+          tooltip-format-wifi = "IP: {ipaddr}\nSSID: {essid}\nFrequency: {frequency} MHz";
         };
 
         "wireplumber" = {

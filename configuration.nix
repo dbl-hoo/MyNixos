@@ -20,7 +20,8 @@
   # Networking
   networking = {
     hostName = "nixos";
-    networkmanager.enable = true;
+    #networkmanager.enable = true;
+    wireless.iwd.enable = true;
     firewall.enable = false;
   };
 
