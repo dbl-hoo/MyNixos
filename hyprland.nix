@@ -160,6 +160,7 @@
         "$mainMod, SPACE, exec, $menu"
         "$mainMod, C, exec, $ide"
         "$mainMod, L, exec, hyprlock"
+        "$mainMod, X, exec, wlogout"
 
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"

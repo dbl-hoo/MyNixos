@@ -88,6 +88,10 @@
     firefox.enable = true;
     rofi.enable = true;
     alacritty.enable = true;
+    foot.enable = true;
+    wlogout = {
+      enable = true;
+    };
     git = {
       enable = true;
       userName = "kirkham";
