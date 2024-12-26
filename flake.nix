@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils"; #hyprland qt utils
 
     # Add Stylix input
     stylix = {
@@ -16,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, zen_browser, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, stylix, zen_browser, hyprland-qtutils, ... }@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };  # Pass inputs to configuration

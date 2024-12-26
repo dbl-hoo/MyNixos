@@ -1,11 +1,11 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
         # to-do:  border around special workspaces; change annimations
         # to-do:  add icons for zen browser and cursor ide
 {
 
   home.packages = with pkgs; [
     # Core Hyprland Utilities
-    #hyprland-qtutils      # Hyprland QT utilities
+    inputs.hyprland-qtutils.packages."${pkgs.system}".default #hyprland qt utils
     swaynotificationcenter                # Notification daemon
     libnotify           # Notification library
     hyprpolkitagent # Authentication agent
@@ -21,9 +21,6 @@
 
     
     # Hyprland Add-ons
-    # hyprpicker          # Color picker
-    # wlogout             # Logout menu
-    # swaylock-effects    # Screen locker
   ];
 
   wayland.windowManager.hyprland = {
