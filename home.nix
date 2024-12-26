@@ -26,11 +26,6 @@
     };
   };
 
-  stylix = {
-    enable = true;
-    targets.gtk.enable = true;
-  };
-
   # Packages that should be installed to the user profile
   home.packages = with pkgs; [
    
@@ -62,8 +57,9 @@
     ripgrep       # Fast text search tool
     unzip         # ZIP archive extraction
     nautilus      # File manager
-    
-    
+    #yazi          # File manager
+    #superfile     # File manager
+ 
     # Audio/Video
     ffmpeg        # Multimedia framework
     mpv           # Media player
@@ -72,7 +68,7 @@
     spotify       # Music streaming client
     
     # System Tray Applications
-    networkmanagerapplet  # Network management
+    #networkmanagerapplet  # Network management
     
     # Image and Font Management
     imv           # Image viewer
@@ -89,24 +85,25 @@
 
   ];
 
-  # #stylix gtk
-  # gtk = {
-  #   iconTheme = {
-  #     name = "Papirus-Dark";
-  #     package = pkgs.papirus-icon-theme;
-  #   };
-  #   gtk3.extraConfig = {
-  #     gtk-application-prefer-dark-theme = 1;
-  #   };
-  #   gtk4.extraConfig = {
-  #     gtk-application-prefer-dark-theme = 1;
-  #   };
-  # };
-  # qt = {
-  #   enable = true;
-  #   style.name = "adwaita-dark";
-  #   platformTheme.name = "gtk3";
-  # };
+  # gtk theme
+  gtk = {
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+  };
+  qt = {
+    enable = true;
+    style.name = "adwaita-dark";
+    platformTheme.name = "gtk3";
+  };
+
 
   # Program configurations
   programs = {
