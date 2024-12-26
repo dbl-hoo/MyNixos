@@ -17,6 +17,15 @@
   # Let home-manager manage itself
   programs.home-manager.enable = true;
 
+  #enable XDG
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+    };
+  };
+
   # Packages that should be installed to the user profile
   home.packages = with pkgs; [
    
@@ -39,6 +48,7 @@
     brightnessctl # Control device brightness
     dosfstools    # Tools for FAT filesystems
     ntfs3g        # NTFS filesystem support
+    lshw          # Hardware information tool
     
     # File Management
     file-roller   # Archive manager for GNOME

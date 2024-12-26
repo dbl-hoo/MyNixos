@@ -12,15 +12,27 @@
   nixpkgs.config.allowUnfree = true;
 
   # Boot Configuration
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
+  boot = {
+    initrd.kernelModules = [ "amdgpu" ];
+    kernelPackages = pkgs.linuxPackages_zen;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    tmp = {
+      useTmpfs = true;
+      tmpfsSize = "30%";
+    };
+    plymouth = {
+      enable = true;
+    };
+    kernelParams = [ "quiet" "splash" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3" ];
+    consoleLogLevel = 0;
   };
 
   # Networking
   networking = {
     hostName = "nixos";
-    #networkmanager.enable = true;
     wireless.iwd.enable = true;
     firewall.enable = false;
   };
@@ -73,6 +85,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    greetd.tuigreet
     git
     curl
   ];
@@ -88,6 +101,7 @@
     blueman.enable = true;
     libinput.enable = true;
     power-profiles-daemon.enable = true;
+    gvfs.enable = true;
   };
 
   # Audio
@@ -130,6 +144,17 @@
         terminal = 14;
         desktop = 11;
         popups = 12;
+      };
+    };
+  };
+
+  # Display Manager
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
+        user = "kirkham";
       };
     };
   };
