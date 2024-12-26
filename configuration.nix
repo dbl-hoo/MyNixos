@@ -7,7 +7,14 @@
   ];
 
   # System Configuration
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-generations +5";
+    };
+  };
   system.stateVersion = "24.11"; # Do not change this value!
   nixpkgs.config.allowUnfree = true;
 
@@ -73,15 +80,15 @@
   # Programs and Packages
   programs = {
     hyprland.enable = true;
-    zsh.enable = true;
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-        tumbler  # Thumbnails daemon
-      ];
-    };
+    # zsh.enable = true;
+    # thunar = {
+    #   enable = true;
+    #   plugins = with pkgs.xfce; [
+    #     thunar-archive-plugin
+    #     thunar-volman
+    #     tumbler  # Thumbnails daemon
+    #   ];
+    # };
   };
 
   environment.systemPackages = with pkgs; [
@@ -118,9 +125,10 @@
   # Theming
   stylix = {
     enable = true;
-    image = ./wallpapers/lego_mando.jpg;
+    image = ./wallpapers/lego_sunset.jpg;
     polarity = "dark";
     opacity.terminal = 0.8;
+    targets.gtk.enable = true;
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";

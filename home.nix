@@ -26,6 +26,11 @@
     };
   };
 
+  stylix = {
+    enable = true;
+    targets.gtk.enable = true;
+  };
+
   # Packages that should be installed to the user profile
   home.packages = with pkgs; [
    
@@ -56,6 +61,7 @@
     eza           # Modern replacement for ls
     ripgrep       # Fast text search tool
     unzip         # ZIP archive extraction
+    nautilus      # File manager
     
     
     # Audio/Video
@@ -83,6 +89,25 @@
 
   ];
 
+  # #stylix gtk
+  # gtk = {
+  #   iconTheme = {
+  #     name = "Papirus-Dark";
+  #     package = pkgs.papirus-icon-theme;
+  #   };
+  #   gtk3.extraConfig = {
+  #     gtk-application-prefer-dark-theme = 1;
+  #   };
+  #   gtk4.extraConfig = {
+  #     gtk-application-prefer-dark-theme = 1;
+  #   };
+  # };
+  # qt = {
+  #   enable = true;
+  #   style.name = "adwaita-dark";
+  #   platformTheme.name = "gtk3";
+  # };
+
   # Program configurations
   programs = {
     firefox.enable = true;
@@ -100,6 +125,7 @@
         init.defaultBranch = "main";
       };
     };
+    zsh.enable = true;
   };
 
   # Allow unfree packages

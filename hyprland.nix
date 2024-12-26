@@ -38,7 +38,7 @@
 
     "$mainMod" = "SUPER";
     "$terminal" = "alacritty -e zsh";
-    "$fileManager" = "thunar";
+    "$fileManager" = "nautilus";
     "$menu" = "rofi -show drun";
     "$webBrowser" = "zen";
     "$ide" = "cursor";
