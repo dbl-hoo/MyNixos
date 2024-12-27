@@ -49,6 +49,7 @@
     dosfstools    # Tools for FAT filesystems
     ntfs3g        # NTFS filesystem support
     lshw          # Hardware information tool
+    gparted       # GPT partition tool
     
     # File Management
     file-roller   # Archive manager for GNOME
@@ -57,8 +58,6 @@
     ripgrep       # Fast text search tool
     unzip         # ZIP archive extraction
     nautilus      # File manager
-    #yazi          # File manager
-    #superfile     # File manager
  
     # Audio/Video
     ffmpeg        # Multimedia framework
