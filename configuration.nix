@@ -80,15 +80,6 @@
   # Programs and Packages
   programs = {
     hyprland.enable = true;
-    # zsh.enable = true;
-    # thunar = {
-    #   enable = true;
-    #   plugins = with pkgs.xfce; [
-    #     thunar-archive-plugin
-    #     thunar-volman
-    #     tumbler  # Thumbnails daemon
-    #   ];
-    # };
   };
 
   environment.systemPackages = with pkgs; [
@@ -98,9 +89,14 @@
   ];
 
   # Hardware
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
+  hardware = {
+    graphics = {
+      enable = true;
+    };
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
   };
 
   # Services
@@ -109,7 +105,10 @@
     libinput.enable = true;
     power-profiles-daemon.enable = true;
     gvfs.enable = true;
-  };
+    smartd.enable = true;
+    fstrim.enable = true;
+    avahi.enable = true;
+      };
 
   # Audio
   security.rtkit.enable = true;
