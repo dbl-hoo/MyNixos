@@ -1,25 +1,24 @@
 { config, lib, pkgs, inputs, ... }:
-        # to-do:  border around special workspaces; change annimations
-        # to-do:  add icons for zen browser and cursor ide
+
 {
+  # To-do: Border around special workspaces; change animations
+  # To-do: Add icons for zen browser and cursor IDE
 
   home.packages = with pkgs; [
     # Core Hyprland Utilities
-    inputs.hyprland-qtutils.packages."${pkgs.system}".default #hyprland qt utils
-    swaynotificationcenter                # Notification daemon
-    libnotify           # Notification library
-    hyprpolkitagent # Authentication agent
-    libinput              # Input device management
-    hyprland-protocols    # Wayland protocols for Hyprland
-    libinput-gestures     # Gesture support
-    
-    # Screenshots & Recording
-    grim                # Screenshot utility
-    slurp               # Screen area selection
-    wl-clipboard        # Wayland clipboard utilities
-    
+    inputs.hyprland-qtutils.packages."${pkgs.system}".default  # Hyprland QT utils
+    swaynotificationcenter  # Notification daemon
+    libnotify               # Notification library
+    hyprpolkitagent         # Authentication agent
+    libinput                # Input device management
+    hyprland-protocols      # Wayland protocols for Hyprland
+    libinput-gestures       # Gesture support
 
-    
+    # Screenshots & Recording
+    grim                    # Screenshot utility
+    slurp                   # Screen area selection
+    wl-clipboard            # Wayland clipboard utilities
+
     # Hyprland Add-ons
   ];
 
@@ -27,21 +26,19 @@
     enable = true;
 
     settings = {
+      workspace = [
+        "special:spotify, on-created-empty: spotify"
+        "special:spotify, dropdown, gapsout:45"
+        "special:terminal, on-created-empty:$terminal"
+        "special:terminal, dropdown, gapsout:45"
+      ];
 
-    workspace = [
-      "special:spotify, on-created-empty: spotify"
-      "special:spotify, dropdown, gapsout:45"
-      "special:terminal, on-created-empty:$terminal"
-      "special:terminal, dropdown, gapsout:45"
-    ];
-    
-
-    "$mainMod" = "SUPER";
-    "$terminal" = "alacritty -e zsh";
-    "$fileManager" = "nautilus";
-    "$menu" = "rofi -show drun";
-    "$webBrowser" = "zen";
-    "$ide" = "cursor";
+      "$mainMod" = "SUPER";
+      "$terminal" = "alacritty -e zsh";
+      "$fileManager" = "nautilus";
+      "$menu" = "rofi -show drun";
+      "$webBrowser" = "zen";
+      "$ide" = "cursor";
 
       env = [
         "XCURSOR_SIZE,24"
@@ -54,8 +51,9 @@
 
       exec-once = [
         "waybar"                    # Status bar
-        "libinput-gestures-setup start" # Gesture support
+        "libinput-gestures-setup start"  # Gesture support
         "swaync"
+        "systemctl --user start hyprpolkitagent"
       ];
 
       general = {
@@ -190,7 +188,6 @@
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         ", XF86MonBrightnessUp, exec, brightnessctl s 10%+"
         ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
-
       ];
 
       bindm = [
