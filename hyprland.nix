@@ -129,17 +129,10 @@
         };
       };
 
-      # windowrule = [
-      #   "float,^(iwgtk)$"
-      #   "size 800 500,^(iwgtk)$"
-      #   "float,^(pavucontrol)$"
-      #   "center,^(iwgtk)$"
-      #   "center,^(pavucontrol)$"
-      # ];
-
       windowrulev2 = [
         "float, class:.*pavucontrol.*"
         "float, class:.*iwgtk.*"
+        "float, class:.*blueman.*"
         "size 800 500, class:.*iwgtk.*"
       ];
 
