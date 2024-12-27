@@ -33,6 +33,8 @@
         "special:spotify, dropdown, gapsout:45"
         "special:terminal, on-created-empty:$terminal"
         "special:terminal, dropdown, gapsout:45"
+        "name: web, on-created-empty: $browser"
+        "name: ide, on-created-empty: $ide"
       ];
 
       "$mainMod" = "SUPER";
@@ -153,11 +155,11 @@
         "$mainMod SHIFT, RETURN, togglespecialworkspace, terminal"
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"
-        "$mainMod, B, exec, $webBrowser"
+        "$mainMod, B, exec, [workspace name:web] $webBrowser"
         "$mainMod, E, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, SPACE, exec, $menu"
-        "$mainMod, C, exec, $ide"
+        "$mainMod, C, exec, [workspace name:ide] $ide"
         "$mainMod, L, exec, hyprlock"
         "$mainMod, X, exec, wlogout"
 

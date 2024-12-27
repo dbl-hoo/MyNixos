@@ -32,6 +32,8 @@
           format-icons = {
             "terminal" = "";
             "spotify" = "";
+            "web" = "";
+            "ide" = "󱄅";
             "default" = " ";
           };
           sort-by-number = true;
