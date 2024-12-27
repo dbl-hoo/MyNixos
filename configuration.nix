@@ -123,7 +123,7 @@
   # Theming
   stylix = {
     enable = true;
-    image = ./wallpapers/lego_sunset.jpg;
+    image = ./wallpapers/luke_and_darth.jpg;
     polarity = "dark";
     opacity.terminal = 0.8;
     targets.gtk.enable = true;
