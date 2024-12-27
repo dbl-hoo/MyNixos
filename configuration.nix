@@ -86,6 +86,7 @@
     greetd.tuigreet
     git
     curl
+    gparted # GPT partition tool - has to be installed as a system package to work with hyprland and polkit
   ];
 
   # Hardware
@@ -108,7 +109,7 @@
     smartd.enable = true;
     fstrim.enable = true;
     avahi.enable = true;
-      };
+  };
 
   # Audio
   security.rtkit.enable = true;

@@ -13,6 +13,8 @@
     libinput                # Input device management
     hyprland-protocols      # Wayland protocols for Hyprland
     libinput-gestures       # Gesture support
+    xdg-desktop-portal-hyprland  # Portal for Hyprland
+    xorg.xhost              # X server access
 
     # Screenshots & Recording
     grim                    # Screenshot utility
@@ -43,17 +45,23 @@
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
+        "XDG_CURRENT_DESKTOP, Hyprland"
+        "XDG_SESSION_TYPE, wayland"
+        "XDG_SESSION_DESKTOP, Hyprland"
       ];
 
       monitor = [
         ",1920x1080,auto,1"
       ];
 
+      # autostart
       exec-once = [
         "waybar"                    # Status bar
         "libinput-gestures-setup start"  # Gesture support
         "swaync"
         "systemctl --user start hyprpolkitagent"
+        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
       ];
 
       general = {

@@ -49,7 +49,6 @@
     dosfstools    # Tools for FAT filesystems
     ntfs3g        # NTFS filesystem support
     lshw          # Hardware information tool
-    gparted       # GPT partition tool
     
     # File Management
     file-roller   # Archive manager for GNOME
