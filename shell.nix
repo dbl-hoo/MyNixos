@@ -5,8 +5,8 @@
 let 
   myAliases = {
     sv = "sudo nvim";
-    nr = "nh os switch --hostname nixos /home/kirkham/mynixos";
-    nu = "nh os switch --hostname nixos --update /home/kirkham/mynixos";
+    nr = "nh os switch --hostname nixos /home/kirkham/MyNixos";
+    nu = "nh os switch --hostname nixos --update /home/kirkham/MyNixos";
     ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
     cat = "bat";
     ll = "eza -lh --icons --grid --group-directories-first";
@@ -17,7 +17,7 @@ let
     ff = "fastfetch";
     pf = "pfetch";
     lt = "eza -a --tree --icons";
-		dot = "cd /home/kirkham/mynixos";
+		dot = "cd /home/kirkham/MyNixos";
     gs = "git status";
     ga = "git add";
     gc = "git commit -m";
@@ -46,7 +46,7 @@ in
       initExtra = ''
         if [ -n "$DISPLAY" ] || [ -n "$WAYLAND_DISPLAY" ]; then
           pfetch
-          source /home/kirkham/mynixos/p10k.zsh
+          source /home/kirkham/MyNixos/p10k.zsh
         fi
       '';
       plugins = [
