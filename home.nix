@@ -49,6 +49,7 @@
     dosfstools    # Tools for FAT filesystems
     ntfs3g        # NTFS filesystem support
     lshw          # Hardware information tool
+    bitwarden     # Password manager
     
     # File Management
     file-roller   # Archive manager for GNOME
