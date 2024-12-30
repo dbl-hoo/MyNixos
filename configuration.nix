@@ -123,7 +123,7 @@
   # Theming
   stylix = {
     enable = true;
-    image = ./wallpapers/luke_and_darth.jpg;
+    image = ./wallpapers/jedi_forest.jpg;
     polarity = "dark";
     opacity.terminal = 0.8;
     targets.gtk.enable = true;
