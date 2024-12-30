@@ -109,6 +109,7 @@
     firefox.enable = true;
     rofi.enable = true;
     alacritty.enable = true;
+    kitty.enable = true;
     foot.enable = true;
     wlogout = {
       enable = true;
@@ -121,6 +122,7 @@
         init.defaultBranch = "main";
       };
     };
+    zed-editor.enable = true;
     zsh.enable = true;
   };
 
