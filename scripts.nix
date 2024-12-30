@@ -10,7 +10,7 @@
 
       # Run the rebuild with sudo prompt monitoring
       sudo -v  # Prompt for sudo password
-      if nh os switch --hostname nixos /home/kirkham/mynixos; then
+      if nh os switch --hostname nixos /home/kirkham/MyNixos; then
         notify-send "NixOS" "Rebuild Successful!" -i "dialog-information"
       else
         notify-send "NixOS" "Rebuild Failed!" -i "dialog-error"
@@ -25,7 +25,7 @@
 
       # Run the update with sudo prompt monitoring
       sudo -v  # Prompt for sudo password
-      if nh os switch --hostname nixos --update /home/kirkham/mynixos; then
+      if nh os switch --hostname nixos --update /home/kirkham/MyNixos; then
         notify-send "NixOS" "Update Successful!" -i "dialog-information"
       else
         notify-send "NixOS" "Update Failed!" -i "dialog-error"
@@ -51,7 +51,7 @@
       fi
 
       # Switch to the specified NixOS configuration
-      if ! nh os switch --hostname nixos /home/kirkham/mynixos; then
+      if ! nh os switch --hostname nixos /home/kirkham/MyNixos; then
         notify-send "NixOS" "Failed to switch NixOS configuration!" -i "dialog-error"
         exit 1
       fi
