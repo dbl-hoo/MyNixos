@@ -24,6 +24,7 @@
           "network"
           "battery"
           "power-profiles-daemon"
+          "wireplumber"
           "custom/notification"
         ];
 
@@ -148,8 +149,9 @@
 
         "wireplumber" = {
           format = "{volume}% {icon}";
-          format-muted = "";
+          format-muted = "󰝟";
           on-click = "pavucontrol";
+          on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           format-icons = [ "" "" "" ];
         };
 
