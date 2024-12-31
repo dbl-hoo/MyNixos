@@ -138,18 +138,18 @@
         name = "JetBrainsMono Nerd Font Mono";
       };
       sansSerif = {
-        package = pkgs.montserrat;
-        name = "Montserrat";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font Mono";
       };
       serif = {
-        package = pkgs.montserrat;
-        name = "Montserrat";
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font Mono";
       };
       sizes = {
-        applications = 12;
+        applications = 14;
         terminal = 16;
-        desktop = 12;
-        popups = 12;
+        desktop = 14;
+        popups = 16;
       };
     };
   };
