@@ -50,6 +50,8 @@
     ntfs3g        # NTFS filesystem support
     lshw          # Hardware information tool
     bitwarden     # Password manager
+    gnused        # gnused
+    bc
     
     # File Management
     file-roller   # Archive manager for GNOME
