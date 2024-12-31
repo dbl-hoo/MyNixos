@@ -64,7 +64,7 @@
     mpv           # Media player
     pavucontrol   # Audio control panel
     playerctl     # Media player control
-    spotify       # Music streaming client
+    spotify       # Music streaming clients
     
     # System Tray Applications
     #networkmanagerapplet  # Network management
