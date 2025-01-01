@@ -9,11 +9,11 @@
   # System Configuration
   nix = {
     settings.experimental-features = [ "nix-command" "flakes" ];
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-generations +5";
-    };
+    # gc = {
+    #   automatic = true;
+    #   dates = "daily";
+    #   options = "--delete-generations +5";
+    # };
   };
   system.stateVersion = "24.11"; # Do not change this value!
   nixpkgs.config.allowUnfree = true;
@@ -164,4 +164,12 @@
   #     };
   #   };
   # };
+
+  #enable NH clean
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 5";
+    flake = "/home/user/MyNixos";
+  };
 }
