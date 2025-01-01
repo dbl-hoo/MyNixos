@@ -26,6 +26,7 @@
           "power-profiles-daemon"
           "wireplumber"
           "custom/notification"
+          "custom/nixmenu"
         ];
 
         "hyprland/workspaces" = {
@@ -130,6 +131,12 @@
           exec = "swaync-client -swb";
           on-click = "swaync-client -t";
           escape = true;
+        };
+
+        "custom/nixmenu" = {
+          tooltip = false;
+          format = "";
+          on-click = "wlogout";
         };
 
         "network" = {
@@ -246,6 +253,7 @@
       #pulseaudio,
       #wireplumber,
       #custom-notification,
+      #custom-nixmenu,
       #tray {
         padding: 0 10px;
         margin: 0 5px;
