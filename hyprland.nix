@@ -35,6 +35,8 @@
         "special:terminal, dropdown, gapsout:45"
         "name: web, on-created-empty: $browser"
         "name: ide, on-created-empty: $ide"
+        "special:notion, on-created-empty:$notion"
+        "special:notion, dropdown, gapsout:45"
       ];
 
       "$mainMod" = "SUPER";
@@ -43,6 +45,7 @@
       "$menu" = "rofi -show drun";
       "$webBrowser" = "zen";
       "$ide" = "cursor";
+      "$notion" = "$webBrowser -new-window https://www.notion.so/home";
 
       env = [
         "XCURSOR_SIZE,24"
@@ -157,9 +160,10 @@
         "$mainMod, M, exit,"
         "$mainMod, B, exec, [workspace name:web] $webBrowser"
         "$mainMod, E, exec, $fileManager"
-        "$mainMod, V, togglefloating,"
+        "$mainMod, F, togglefloating,"
         "$mainMod, SPACE, exec, $menu"
         "$mainMod, C, exec, [workspace name:ide] $ide"
+        "$mainMod, N, togglespecialworkspace, notion"
         "$mainMod, L, exec, hyprlock"
         "$mainMod, X, exec, wlogout"
 
