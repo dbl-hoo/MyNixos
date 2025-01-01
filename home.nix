@@ -9,6 +9,7 @@
     ./swaync.nix
     ./hypridle.nix
     ./hyprlock.nix
+    ./rofi.nix
   ];
 
   home.username = "kirkham";
@@ -50,8 +51,6 @@
     ntfs3g        # NTFS filesystem support
     lshw          # Hardware information tool
     bitwarden     # Password manager
-    gnused        # gnused
-    bc
     
     # File Management
     file-roller   # Archive manager for GNOME
@@ -86,7 +85,8 @@
 
   ];
 
-  # gtk theme
+  # styling
+  stylix.targets.rofi.enable = false; #disable rofi so that I can use rofi.nix
   gtk = {
     iconTheme = {
       name = "Tela-circle";
@@ -109,12 +109,11 @@
   # Program configurations
   programs = {
     firefox.enable = true;
-    rofi.enable = true;
     alacritty.enable = true;
     kitty.enable = true;
     foot.enable = true;
     wlogout = {
-      enable = true;
+      enable = true;  # Enable wlogout
     };
     git = {
       enable = true;
