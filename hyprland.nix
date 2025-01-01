@@ -45,7 +45,7 @@
       "$menu" = "rofi -show drun";
       "$webBrowser" = "zen";
       "$ide" = "cursor";
-      "$notion" = "$webBrowser -new-window https://www.notion.so/home";
+      "$notion" = "$webBrowser -new-window https://www.notion.so/";
 
       env = [
         "XCURSOR_SIZE,24"
