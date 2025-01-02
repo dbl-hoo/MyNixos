@@ -123,7 +123,7 @@
   # Theming
   stylix = {
     enable = true;
-    image = ./wallpapers/jedi_forest.jpg;
+    image = ./wallpapers/alley_scene.png;
     polarity = "dark";
     opacity.terminal = 0.8;
     targets.gtk.enable = true;
