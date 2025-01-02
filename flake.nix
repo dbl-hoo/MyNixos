@@ -23,6 +23,7 @@
       specialArgs = { inherit inputs; };  # Pass inputs to configuration
       modules = [
         ./configuration.nix
+        ./modules/fonts.nix
 
         home-manager.nixosModules.home-manager
         {

@@ -1,8 +1,6 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, inputs, system, ... }:
 
 {
-  # To-do: Border around special workspaces; change animations
-  # To-do: Add icons for zen browser and cursor IDE
 
   home.packages = with pkgs; [
     # Core Hyprland Utilities
@@ -20,6 +18,7 @@
     grim                    # Screenshot utility
     slurp                   # Screen area selection
     wl-clipboard            # Wayland clipboard utilities
+    cowsay
 
     # Hyprland Add-ons
   ];
