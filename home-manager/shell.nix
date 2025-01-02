@@ -46,7 +46,7 @@ in
       initExtra = ''
         if [ -n "$DISPLAY" ] || [ -n "$WAYLAND_DISPLAY" ]; then
           pfetch
-          source /home/kirkham/MyNixos/home-manager/p10k.zsh
+          source /home/kirkham/p10k.zsh
         fi
       '';
       plugins = [

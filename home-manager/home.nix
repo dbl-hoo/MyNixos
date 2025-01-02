@@ -15,6 +15,10 @@
   home.username = "kirkham";
   home.homeDirectory = "/home/kirkham";
 
+  home.file."p10k.zsh" = {
+    source = ../dotfiles/p10k.zsh;
+  };
+
   # Let home-manager manage itself
   programs.home-manager.enable = true;
 

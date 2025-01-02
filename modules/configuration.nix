@@ -1,9 +1,9 @@
 { config, pkgs, system, inputs, ... }:
 
 {
-  imports = [ 
-    ./hardware-configuration.nix
-  ];
+  # imports = [ 
+  #   ./hardware-configuration.nix
+  # ];
 
   # System Configuration
   nix = {
@@ -122,7 +122,7 @@
   # Theming
   stylix = {
     enable = true;
-    image = ./wallpapers/alley_scene.png;
+    image = ../wallpapers/alley_scene.png;
     polarity = "dark";
     opacity.terminal = 0.8;
     targets.gtk.enable = true;

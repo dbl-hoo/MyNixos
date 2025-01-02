@@ -22,8 +22,9 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };  # Pass inputs to configuration
       modules = [
-        ./configuration.nix
+        ./modules/configuration.nix
         ./modules/fonts.nix
+        ./modules/hardware.nix
 
         home-manager.nixosModules.home-manager
         {
