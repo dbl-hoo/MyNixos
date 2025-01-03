@@ -25,9 +25,10 @@
         ./modules/configuration.nix
         ./modules/fonts.nix
         ./modules/hardware.nix
-        ./modules.nix
+        ./modules/settings.nix
         ./modules/boot.nix
         ./modules/users.nix
+        ./modules/stylix.nix
 
         home-manager.nixosModules.home-manager
         {
