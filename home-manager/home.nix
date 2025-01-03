@@ -19,6 +19,11 @@
     source = ../dotfiles/p10k.zsh;
   };
 
+    home.file."Pictures/Wallpapers" = {
+    source = config.lib.file.mkOutOfStoreSymlink "/home/kirkham/MyNixos/wallpapers";
+  };
+
+
   # Let home-manager manage itself
   programs.home-manager.enable = true;
 
