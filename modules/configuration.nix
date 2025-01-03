@@ -1,40 +1,7 @@
 { config, pkgs, system, inputs, ... }:
 
 {
-  # imports = [ 
-  #   ./hardware-configuration.nix
-  # ];
 
-  # System Configuration
-  nix = {
-    settings.experimental-features = [ "nix-command" "flakes" ];
-    # gc = {
-    #   automatic = true;
-    #   dates = "daily";
-    #   options = "--delete-generations +5";
-    # };
-  };
-  system.stateVersion = "24.11"; # Do not change this value!
-  nixpkgs.config.allowUnfree = true;
-
-  # Boot Configuration
-  boot = {
-    initrd.kernelModules = [ "amdgpu" ];
-    kernelPackages = pkgs.linuxPackages_zen;
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-    tmp = {
-      useTmpfs = true;
-      tmpfsSize = "30%";
-    };
-    plymouth = {
-      enable = true;
-    };
-    kernelParams = [ "quiet" "splash" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3" ];
-    consoleLogLevel = 0;
-  };
 
   # Networking
   networking = {
@@ -66,15 +33,6 @@
     variant = "";
   };
  
-
-  # User Configuration
-  users.users.kirkham = {
-    isNormalUser = true;
-    description = "kirkham";
-    shell = pkgs.bash;
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
 
   # Programs and Packages
   programs = {

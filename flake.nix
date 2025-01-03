@@ -25,6 +25,9 @@
         ./modules/configuration.nix
         ./modules/fonts.nix
         ./modules/hardware.nix
+        ./modules.nix
+        ./modules/boot.nix
+        ./modules/users.nix
 
         home-manager.nixosModules.home-manager
         {
