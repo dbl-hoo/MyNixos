@@ -4,7 +4,7 @@
 # Theming
   stylix = {
     enable = true;
-    image = ../wallpapers/alley_scene.png;
+    image = ../wallpapers/troopers_sand.jpg;
     polarity = "dark";
     opacity.terminal = 0.8;
     targets.gtk.enable = true;
