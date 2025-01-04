@@ -19,9 +19,18 @@
     source = ../dotfiles/p10k.zsh;
   };
 
+  home.file.".config/Cursor/User/settings.json" = {
+    source = config.lib.file.mkOutOfStoreSymlink "/home/kirkham/MyNixos/dotfiles/cursor_settings.json";
+  };
+
+  home.file.".config/Cursor/User/keybindings.json" = {
+    source = config.lib.file.mkOutOfStoreSymlink "/home/kirkham/MyNixos/dotfiles/cursor_keybindings.json";
+  };
+
     home.file."Pictures/Wallpapers" = {
     source = config.lib.file.mkOutOfStoreSymlink "/home/kirkham/MyNixos/wallpapers";
   };
+  
 
 
   # Let home-manager manage itself
@@ -60,6 +69,7 @@
     ntfs3g        # NTFS filesystem support
     lshw          # Hardware information tool
     bitwarden     # Password manager
+    ventoy-bin-full
     
     # File Management
     file-roller   # Archive manager for GNOME
