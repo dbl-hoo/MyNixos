@@ -136,7 +136,7 @@
       userEmail = "jason.kirkham@gmail.com";
       extraConfig = {
         init.defaultBranch = "main";
-        credential.helper = "oauth";
+        credential.helper = "!gh auth git-credential";
       };
     };
     zed-editor.enable = true;
