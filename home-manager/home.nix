@@ -113,12 +113,6 @@
       name = "Tela-circle";
       package = pkgs.tela-circle-icon-theme;
     };
-    # gtk3.extraConfig = {
-    #   gtk-application-prefer-dark-theme = 1;
-    # };
-    # gtk4.extraConfig = {
-    #   gtk-application-prefer-dark-theme = 1;
-    # };
   };
   qt = {
     enable = true;
@@ -142,6 +136,7 @@
       userEmail = "jason.kirkham@gmail.com";
       extraConfig = {
         init.defaultBranch = "main";
+        credential.helper = "oauth";
       };
     };
     zed-editor.enable = true;
