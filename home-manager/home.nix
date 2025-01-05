@@ -70,6 +70,7 @@
     lshw          # Hardware information tool
     bitwarden     # Password manager
     ventoy-bin-full
+    gh            #github helper
     
     # File Management
     file-roller   # Archive manager for GNOME
@@ -78,6 +79,7 @@
     ripgrep       # Fast text search tool
     unzip         # ZIP archive extraction
     nautilus      # File manager
+
  
     # Audio/Video
     ffmpeg        # Multimedia framework
