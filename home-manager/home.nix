@@ -87,6 +87,7 @@
     pavucontrol   # Audio control panel
     playerctl     # Media player control
     spotify       # Music streaming clients
+    noson          # Sonos medial controlers
     
     # System Tray Applications
     #networkmanagerapplet  # Network management
