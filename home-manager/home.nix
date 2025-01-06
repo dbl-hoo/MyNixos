@@ -71,6 +71,7 @@
     bitwarden     # Password manager
     ventoy-bin-full
     gh            #github helper
+    btop          #system monitor
     
     # File Management
     file-roller   # Archive manager for GNOME
@@ -98,6 +99,8 @@
     
     # Printer Support
     hplip         # HP printer drivers and tools
+    libtool       #required for HPLIP
+    libgcc        #required for HPLIP
     
     # Development and System Management
     nh            # Nix helper utilities
