@@ -97,10 +97,8 @@
     imv           # Image viewer
     font-manager  # Font management utility
     
-    # Printer Support
+    # # Printer Support
     hplip         # HP printer drivers and tools
-    libtool       #required for HPLIP
-    libgcc        #required for HPLIP
     
     # Development and System Management
     nh            # Nix helper utilities
