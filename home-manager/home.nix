@@ -10,6 +10,7 @@
     ./hypridle.nix
     ./hyprlock.nix
     ./rofi.nix
+    ./floorp.nix
   ];
 
   home.username = "kirkham";
