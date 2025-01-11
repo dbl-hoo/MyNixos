@@ -70,6 +70,8 @@
     lshw          # Hardware information tool
     bitwarden     # Password manager
     ventoy-bin-full
+    gh            #github helper
+    btop          #system monitor
     
     # File Management
     file-roller   # Archive manager for GNOME
@@ -140,6 +142,7 @@
       userEmail = "jason.kirkham@gmail.com";
       extraConfig = {
         init.defaultBranch = "main";
+        credential.helper = "!gh auth git-credential";
       };
     };
     zed-editor.enable = true;

@@ -4,7 +4,7 @@
 # Theming
   stylix = {
     enable = true;
-    image = ../wallpapers/troopers_sand.jpg;
+    image = ../wallpapers/trooper_field.png;
     polarity = "dark";
     opacity.terminal = 0.8;
     targets.gtk.enable = true;
