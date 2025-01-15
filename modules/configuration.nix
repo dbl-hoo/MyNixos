@@ -66,8 +66,17 @@
     gvfs.enable = true;
     smartd.enable = true;
     fstrim.enable = true;
-    avahi.enable = true;
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+    };
   };
+
+services.printing = {
+    enable  =  true;
+    drivers = [ pkgs.hplipWithPlugin ];
+};
 
   # Audio
   security.rtkit.enable = true;

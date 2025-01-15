@@ -80,6 +80,7 @@
     ripgrep       # Fast text search tool
     unzip         # ZIP archive extraction
     nautilus      # File manager
+
  
     # Audio/Video
     ffmpeg        # Multimedia framework
@@ -87,6 +88,7 @@
     pavucontrol   # Audio control panel
     playerctl     # Media player control
     spotify       # Music streaming clients
+    noson          # Sonos medial controlers
     
     # System Tray Applications
     #networkmanagerapplet  # Network management
@@ -95,7 +97,7 @@
     imv           # Image viewer
     font-manager  # Font management utility
     
-    # Printer Support
+    # # Printer Support
     hplip         # HP printer drivers and tools
     
     # Development and System Management
@@ -113,12 +115,6 @@
       name = "Tela-circle";
       package = pkgs.tela-circle-icon-theme;
     };
-    # gtk3.extraConfig = {
-    #   gtk-application-prefer-dark-theme = 1;
-    # };
-    # gtk4.extraConfig = {
-    #   gtk-application-prefer-dark-theme = 1;
-    # };
   };
   qt = {
     enable = true;

@@ -13,6 +13,7 @@
     libinput-gestures       # Gesture support
     xdg-desktop-portal-hyprland  # Portal for Hyprland
     xorg.xhost              # X server access
+    xdg-utils               #xdg utilities
 
     # Screenshots & Recording
     grim                    # Screenshot utility
