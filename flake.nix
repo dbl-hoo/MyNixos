@@ -1,5 +1,5 @@
 {
-  description = "Kirkham NiOS";
+  description = "Kirkham NixOS";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -8,19 +8,25 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils"; #hyprland qt utils
-
-    # Add Stylix input
+   # hyprland.url = "github:hyprwm/Hyprland";
+   # sway.url = "github:swaywm/sway";
+    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, zen_browser, hyprland-qtutils, ... }@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs; };  # Pass inputs to configuration
+  outputs = { self, nixpkgs, home-manager, stylix, zen_browser, hyprland-qtutils, ... }@inputs:
+  let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+
+    desktopEnv = "hyprland";
+
+    mkSystem = desktop: nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = { inherit inputs desktop; };
       modules = [
         ./modules/configuration.nix
         ./modules/fonts.nix
@@ -29,18 +35,25 @@
         ./modules/boot.nix
         ./modules/users.nix
         ./modules/stylix.nix
+        ./modules/${desktop}.nix
 
         home-manager.nixosModules.home-manager
         {
-          home-manager.useGlobalPkgs = true;
+          #home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
           home-manager.users.kirkham = import ./home-manager/home.nix;
-          home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.extraSpecialArgs = { inherit inputs desktop; };
         }
 
-        stylix.nixosModules.stylix  # Add Stylix module
+        stylix.nixosModules.stylix
       ];
+    };
+  in {
+    nixosConfigurations = {
+      nixos-hyprland = mkSystem "hyprland";
+      nixos-sway = mkSystem "sway";
+      nixos-gnome = mkSystem "gnome";
     };
   };
 }

@@ -4,5 +4,8 @@
     "git.autofetch": true,
     "git.confirmSync": false,
     "explorer.confirmDragAndDrop": false,
-    "workbench.colorTheme": "Monokai Dimmed"
+    "workbench.colorTheme": "Monokai Dimmed",
+    "editor.tabSize": 2,
+    "editor.tabCompletion": "on",
+    "editor.fontSize": 16
 }

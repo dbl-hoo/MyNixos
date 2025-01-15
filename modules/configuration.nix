@@ -44,6 +44,7 @@
     git
     curl
     gparted # GPT partition tool - has to be installed as a system package to work with hyprland and polkit
+    openssl
   ];
 
   # Hardware
