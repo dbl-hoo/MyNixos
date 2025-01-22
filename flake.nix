@@ -29,10 +29,10 @@
       specialArgs = { inherit inputs desktop; };
       modules = [
         ./modules/configuration.nix
-        ./modules/fonts.nix
+      #  ./modules/fonts.nix
         ./modules/hardware.nix
-        ./modules/settings.nix
-        ./modules/boot.nix
+      #  ./modules/settings.nix
+      #  ./modules/boot.nix
         ./modules/users.nix
         ./modules/stylix.nix
         ./modules/${desktop}.nix
@@ -52,7 +52,7 @@
   in {
     nixosConfigurations = {
       nixos-hyprland = mkSystem "hyprland";
-      nixos-sway = mkSystem "sway";
+      #nixos-sway = mkSystem "sway";
       nixos-gnome = mkSystem "gnome";
     };
   };

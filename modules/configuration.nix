@@ -2,6 +2,35 @@
 
 {
 
+#Nix settings
+nix = 
+    {
+        settings.experimental-features = [ "nix-command" "flakes" ];
+    };
+system.stateVersion = "24.11"; # Do not change this value!
+nixpkgs.config.allowUnfree = true;
+nix.settings.auto-optimise-store = true;
+nix.optimise.automatic = true;
+nix.optimise.dates = [ "03:45" ];
+
+# Boot Configuration
+  boot = {
+    initrd.kernelModules = [ "amdgpu" ];
+    kernelPackages = pkgs.linuxPackages_zen;
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    tmp = {
+      useTmpfs = true;
+      tmpfsSize = "30%";
+    };
+    plymouth = {
+      enable = true;
+    };
+    kernelParams = [ "quiet" "splash" "rd.systemd.show_status=false" "rd.udev.log_level=3" "udev.log_priority=3" ];
+    consoleLogLevel = 0;
+  };
 
   # Networking
   networking = {
@@ -34,10 +63,11 @@
   };
  
 
-  # Programs and Packages
-  # programs = {
+  #Programs and Packages
+  programs = {
   #   hyprland.enable = true;
-  # };
+  };
+
 
   environment.systemPackages = with pkgs; [
     greetd.tuigreet
@@ -46,6 +76,18 @@
     gparted # GPT partition tool - has to be installed as a system package to work with hyprland and polkit
     openssl
   ];
+
+  #fonts
+  fonts = {
+    packages = with pkgs; [
+    noto-fonts-emoji
+    noto-fonts-cjk-sans
+    font-awesome
+    material-icons
+    nerd-fonts.open-dyslexic
+    jetbrains-mono
+    ];
+  };
 
   # Hardware
   hardware = {
