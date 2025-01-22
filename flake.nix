@@ -8,8 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-   # hyprland.url = "github:hyprwm/Hyprland";
-   # sway.url = "github:swaywm/sway";
     hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
     stylix = {
       url = "github:danth/stylix";
@@ -21,8 +19,6 @@
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-
-    desktopEnv = "hyprland";
 
     mkSystem = desktop: nixpkgs.lib.nixosSystem {
       inherit system;
@@ -52,7 +48,6 @@
   in {
     nixosConfigurations = {
       nixos-hyprland = mkSystem "hyprland";
-      #nixos-sway = mkSystem "sway";
       nixos-gnome = mkSystem "gnome";
     };
   };
