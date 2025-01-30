@@ -72,6 +72,7 @@
     ventoy-bin-full
     gh            #github helper
     btop          #system monitor
+    dig
     
     # File Management
     file-roller   # Archive manager for GNOME

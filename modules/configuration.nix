@@ -39,6 +39,18 @@ nix.optimise.dates = [ "03:45" ];
     firewall.enable = false;
   };
 
+  # networking.interfaces.enp0s20f0u1u1 = {
+  # useDHCP = false;
+  # ipv4.addresses = [
+  #   {
+  #     address = "192.168.1.10";
+  #     prefixLength = 24;
+  #   }
+  # ];
+  #ipv4.gateway = "192.168.1.1";  # Replace with your gateway's IP
+  #nameservers = [ "8.8.8.8" "1.1.1.1" ];  # Use your preferred DNS servers
+# };
+
   # Time and Locale
   time.timeZone = "America/New_York";
   i18n = {
@@ -75,6 +87,27 @@ nix.optimise.dates = [ "03:45" ];
     curl
     gparted # GPT partition tool - has to be installed as a system package to work with hyprland and polkit
     openssl
+
+        # support both 32-bit and 64-bit applications
+    wineWowPackages.stable
+
+    # support 32-bit only
+    wine
+
+    # support 64-bit only
+    (wine.override { wineBuild = "wine64"; })
+
+    # support 64-bit only
+    wine64
+
+    # wine-staging (version with experimental features)
+    wineWowPackages.staging
+
+    # winetricks (all versions)
+    winetricks
+
+    # native wayland support (unstable)
+    wineWowPackages.waylandFull
   ];
 
   #fonts
