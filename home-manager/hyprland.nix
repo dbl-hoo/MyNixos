@@ -4,7 +4,7 @@
 
   home.packages = with pkgs; [
     # Core Hyprland Utilities
-    inputs.hyprland-qtutils.packages."${pkgs.system}".default  # Hyprland QT utils
+    #inputs.hyprland-qtutils.packages."${pkgs.system}".default  # Hyprland QT utils
     swaynotificationcenter  # Notification daemon
     libnotify               # Notification library
     hyprpolkitagent         # Authentication agent
