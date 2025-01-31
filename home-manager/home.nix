@@ -142,7 +142,6 @@
         credential.helper = "!gh auth git-credential";
       };
     };
-    zed-editor.enable = true;
     zsh.enable = true;
   };
 

@@ -9,7 +9,7 @@
     libnotify               # Notification library
     hyprpolkitagent         # Authentication agent
     libinput                # Input device management
-    hyprland-protocols      # Wayland protocols for Hyprland
+    #hyprland-protocols      # Wayland protocols for Hyprland
     libinput-gestures       # Gesture support
     xdg-desktop-portal-hyprland  # Portal for Hyprland
     xorg.xhost              # X server access

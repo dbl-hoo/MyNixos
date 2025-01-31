@@ -8,7 +8,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
+    hyprland-qtutils.url = "github:hyprwm/hyprland-qtutils";
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,6 +43,7 @@
         }
 
         stylix.nixosModules.stylix
+        
       ];
     };
   in {
